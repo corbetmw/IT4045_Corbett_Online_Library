@@ -45,27 +45,27 @@
                 <b:panel title="Create Account" collapsible="false" style="width:60%;margin:auto;">
                     <b:container >
                         <b:form horizontal="true">
-                            <b:inputText placeholder="Username" required="true" label="Username" colMd="10" labelColMd="2">
+                            <b:inputText value="#{createUserBean.newUser.username}" placeholder="Username" required="true" label="Username" colMd="10" labelColMd="2">
                                 <f:facet name="prepend">
                                     <b:icon name="user" />
                                 </f:facet>
                             </b:inputText>
-                            <b:inputText placeholder="Full Name" required="true" label="Full Name" colMd="10" labelColMd="2">
+                            <b:inputText value="#{createUserBean.newUser.fullname}" placeholder="Full Name" required="true" label="Full Name" colMd="10" labelColMd="2">
                                 <f:facet name="prepend">
                                     <b:icon name="sunglasses" />
                                 </f:facet>
                             </b:inputText>
-                            <b:inputText placeholder="Password" label="Password" colMd="10" labelColMd="2">
+                            <b:inputSecret value="#{createUserBean.newUser.password}" placeholder="Password" label="Password" colMd="10" labelColMd="2">
                                 <f:facet name="prepend">
                                     <b:iconAwesome name="key" />
                                 </f:facet>
-                            </b:inputText>
-                            <b:inputText placeholder="Repeat Password" label="Repeat Password" colMd="10" labelColMd="2">
+                            </b:inputSecret>
+                            <b:inputSecret placeholder="Repeat Password" label="Repeat Password" colMd="10" labelColMd="2">
                                 <f:facet name="prepend">
                                     <b:iconAwesome name="key" />
                                 </f:facet>
-                            </b:inputText>
-                            <b:commandButton look="primary btn-block" value="Create Acount" icon="log-in" size="lg"/>
+                            </b:inputSecret>
+                            <b:commandButton action="#{createUserBean.createUser()}" look="primary btn-block" value="Create Acount" icon="log-in" size="lg"/>
                         </b:form>
                     </b:container>
                 </b:panel>
