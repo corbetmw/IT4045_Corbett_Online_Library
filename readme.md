@@ -1,1 +1,3 @@
-`mvn archetype:generate -DgroupId=com.it4045 -DartifactId=IT4045App -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false`
+An application where user may create accounts, view a catalog of books, check them out, read them, and check them back in.
+
+It's for my enterprise application development class. 
