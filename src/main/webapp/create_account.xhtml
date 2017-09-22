@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Online Library</title>
+    <meta name="author" content="The Author"></meta>
+</h:head>
+
+<!-- Add 50px padding top to the body for the navbar -->
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+    <b:navBar brand="Online Library" brandHref="home.xhtml" inverse="true" fixed="top">
+        <b:navbarLinks>
+            <b:dropMenu value="Dropdown">
+                <b:navLink value="Action" href="#"></b:navLink>
+                <b:navLink value="Another action" href="#"></b:navLink>
+                <b:navLink value="Something else here" href="#"></b:navLink>
+                <b:navLink></b:navLink>
+                <b:navLink header="Nav header"></b:navLink>
+                <b:navLink value="Separated link" href="#"></b:navLink>
+                <b:navLink value="One more separated link" href="#"></b:navLink>
+            </b:dropMenu>
+        </b:navbarLinks>
+        <h:form styleClass="navbar-form navbar-right">
+            <div class="form-group">
+                <b:inputText placeholder="Email" fieldSize="sm"/>
+                <!--input type="text" class="form-control" placeholder="Search"/-->
+            </div>
+            <div class="form-group">
+                <b:inputText placeholder="Password" fieldSize="sm"/>
+            </div>
+            #{' '}
+            <b:commandButton action="a" value="Sign in" look="success" icon="chevron-right" iconAlign="right"/>
+            #{' '}
+            <b:commandButton action="a" value="Create Account" look="info" icon="user" iconAlign="right"/>
+        </h:form>
+    </b:navBar>
+    <b:jumbotron>
+        <b:row>
+            <b:column col-md="2">
+            </b:column>
+            <b:column col-md="8">
+                <b:panel title="Create Account" collapsible="false" style="width:60%;margin:auto;">
+                    <b:container >
+                        <b:form horizontal="true">
+                            <b:inputText placeholder="Username" required="true" label="Username" colMd="10" labelColMd="2">
+                                <f:facet name="prepend">
+                                    <b:icon name="user" />
+                                </f:facet>
+                            </b:inputText>
+                            <b:inputText placeholder="Full Name" required="true" label="Full Name" colMd="10" labelColMd="2">
+                                <f:facet name="prepend">
+                                    <b:icon name="sunglasses" />
+                                </f:facet>
+                            </b:inputText>
+                            <b:inputText placeholder="Password" label="Password" colMd="10" labelColMd="2">
+                                <f:facet name="prepend">
+                                    <b:iconAwesome name="key" />
+                                </f:facet>
+                            </b:inputText>
+                            <b:inputText placeholder="Repeat Password" label="Repeat Password" colMd="10" labelColMd="2">
+                                <f:facet name="prepend">
+                                    <b:iconAwesome name="key" />
+                                </f:facet>
+                            </b:inputText>
+                            <b:commandButton look="primary btn-block" value="Create Acount" icon="log-in" size="lg"/>
+                        </b:form>
+                    </b:container>
+                </b:panel>
+            </b:column>
+            <b:column col-md="2">
+            </b:column>
+        </b:row>
+    </b:jumbotron>
+    <b:container>
+        <hr/>
+        <footer>
+            <p>© Matthew Corbett 2017</p>
+        </footer>
+    </b:container>
+
+</h:body>
+</html>
