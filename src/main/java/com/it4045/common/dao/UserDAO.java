@@ -11,6 +11,7 @@ import com.it4045.common.exceptions.UserNotFoundException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +19,7 @@ import java.util.Map;
 public class UserDAO implements IUserDAO  {
 
     FirebaseDatabase database = Database.getDatabase();
+
     DatabaseReference usersRef = database.getReference("users");
 
 
@@ -26,7 +28,7 @@ public class UserDAO implements IUserDAO  {
     }
 
     public List<User> getAllUsers() throws Exception {
-        final List<User> users = null;
+        final List<User> users = new ArrayList<User>();
         // Attach a listener to read the data at our posts reference
         usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
             public void onDataChange(DataSnapshot dataSnapshot) {
