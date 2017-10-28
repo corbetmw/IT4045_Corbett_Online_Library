@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.it4045.common.dto.Book" table = "book" catalog="it4045app">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+
+        </id>
+
+        <property name="title" type="java.lang.String">
+            <column name="title" length="1000" not-null="true" unique="false"/>
+
+        </property>
+        <property name="author" type="java.lang.String">
+            <column name="author" length="1000" not-null="false" unique="false"/>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status" length="1000" not-null="false" unique="false"/>
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="description" length="1000" not-null="false" unique="false"/>
+        </property>
+    </class>
+</hibernate-mapping>

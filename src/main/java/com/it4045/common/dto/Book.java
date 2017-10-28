@@ -1,7 +1,7 @@
 package com.it4045.common.dto;
 
 public class Book {
-    private int id;
+    private Integer id;
     private String title;
     private String author;
     private String status;
@@ -11,7 +11,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(int id, String title, String author, String status, String description) {
+    public Book(Integer id, String title, String author, String status, String description) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -19,11 +19,11 @@ public class Book {
         this.description = description;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getTitle() {

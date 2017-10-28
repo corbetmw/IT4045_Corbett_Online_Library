@@ -1,6 +1,7 @@
 package com.it4045.common.dto;
 
 public class User {
+    Integer id;
     String userName;
     String password;
     String fullName;
@@ -9,11 +10,20 @@ public class User {
     public User() {
     }
 
-    public User(String userName, String password, String fullName, String role) {
+
+    public User(Integer id, String userName, String password, String fullName, String role) {
+        this.id = id;
         this.userName = userName;
         this.password = password;
         this.fullName = fullName;
         this.role = role;
+    }
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUsername() {
