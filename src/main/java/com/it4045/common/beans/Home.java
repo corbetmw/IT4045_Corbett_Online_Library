@@ -5,6 +5,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * A bean to interact with the homepage of the application.
+ * Stll contains some legacy methods
+ */
 @ManagedBean(name = "home", eager = true)
 public class Home {
 

@@ -9,6 +9,10 @@ import org.hibernate.query.Query;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * This class uses the User object to interact with
+ * the mySQL database using hibernate
+ */
 public class UserDAO implements IUserDAO {
 
     public UserDAO() throws IOException {

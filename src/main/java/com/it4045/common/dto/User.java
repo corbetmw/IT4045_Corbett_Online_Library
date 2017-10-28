@@ -1,5 +1,9 @@
 package com.it4045.common.dto;
 
+/**
+ * A class to represent a user IRL.
+ *
+ */
 public class User {
     Integer id;
     String userName;

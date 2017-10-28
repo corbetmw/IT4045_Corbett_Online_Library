@@ -1,11 +1,15 @@
 package com.it4045.common.test;
 
 import com.it4045.common.dao.UserDAO;
-import com.it4045.common.dto.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class contains unit tests for the UserDAO class.
+ * It tests pretty much all of its methods. It
+ * uses user jdoe for all of the tests.
+ */
 public class UserDAOTest {
 
     UserDAO userDAO;

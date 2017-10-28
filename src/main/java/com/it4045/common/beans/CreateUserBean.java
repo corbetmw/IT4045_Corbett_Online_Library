@@ -14,6 +14,10 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
 import java.io.IOException;
 
+/**
+ * A bean class to allow the application to interact with the
+ * userService
+ */
 @ManagedBean(name="createUserBean", eager = true)
 public class CreateUserBean {
 //@Inject
@@ -52,6 +56,10 @@ public class CreateUserBean {
         return "user_dashboard";
     }
 
+    /**
+     * A method that gets the new user
+     * @return User
+     */
     public User getNewUser()
     {
         if (newUser == null)
@@ -61,6 +69,10 @@ public class CreateUserBean {
         return newUser;
     }
 
+    /**
+     * A method that sets the new user
+     * @param newUser
+     */
     public void setNewUser(User newUser)
     {
         this.newUser = newUser;

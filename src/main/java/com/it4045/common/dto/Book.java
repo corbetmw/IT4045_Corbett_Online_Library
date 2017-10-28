@@ -1,5 +1,10 @@
 package com.it4045.common.dto;
 
+/**
+ * A class to represent a Book, in real life.
+ * Used by the UserDAO class to manipulate corresponding
+ * data
+ */
 public class Book {
     private Integer id;
     private String title;
