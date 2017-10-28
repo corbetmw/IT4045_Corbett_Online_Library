@@ -40,13 +40,13 @@ public class CreateUserBean {
         }
         catch (UserExistsException e)
         {
-            String message = "User " + getNewUser().getUsername() + " already exists, please try with another user";
+            String message = "User " + getNewUser().getUserName() + " already exists, please try with another user";
             currentInstance.addMessage("createUserForm:createUser", new FacesMessage(FacesMessage.SEVERITY_ERROR, message, message));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        String message = "User " + getNewUser().getUsername() + " created successfully!";
+        String message = "User " + getNewUser().getUserName() + " created successfully!";
         currentInstance.addMessage("createUserForm:createUser", new FacesMessage(FacesMessage.SEVERITY_INFO, message, message));
 
         return "user_dashboard";

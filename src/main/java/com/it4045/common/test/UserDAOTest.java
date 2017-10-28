@@ -2,13 +2,60 @@ package com.it4045.common.test;
 
 import com.it4045.common.dao.UserDAO;
 import com.it4045.common.dto.User;
-import com.it4045.common.utility.HibernateUtility;
-import org.hibernate.Session;
-//import org.junit.After;
-//import org.junit.Before;
-//import org.junit.Test;
-
-import java.util.List;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class UserDAOTest {
+
+    UserDAO userDAO;
+    @Before
+    public void setUp() throws Exception {
+        userDAO= new UserDAO();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+
+    }
+
+    @Test
+    public void testGetAllUsers() throws Exception {
+        assert(userDAO.getAllUsers().size() == 1);
+    }
+
+    @Test
+    public void testGetUserByUsername() throws Exception {
+        assert(userDAO.getUserByUsername("jdoe").getId() == 1);
+    }
+
+    @Test
+    public void testGetUserById() throws Exception {
+        assert(userDAO.getUserById(1).getUserName().equalsIgnoreCase("jdoe"));
+    }
+
+    @Test
+    public void testAddUser() throws Exception {
+
+//        User user = new User();
+//        user.setFullName("John Doe");
+//        user.setPassword("password");
+//        user.setUserName("jdoe");
+//        user.setRole("");
+//
+//        userDAO.addUser(user);
+    }
+
+    @Test
+    public void testUpdateUser() throws Exception {
+//        User john = userDAO.getUserByUsername("jdoe");
+//        john.setPassword("testupdateuser");
+//        userDAO.updateUser(john);
+    }
+
+    @Test
+    public void testDeleteUser() throws Exception {
+//        User user = userDAO.getUserByUsername("jdoe");
+//        userDAO.deleteUser(user);
+    }
 }

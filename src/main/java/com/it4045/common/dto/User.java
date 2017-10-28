@@ -26,11 +26,11 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
+    public String getUserName() {
         return userName;
     }
 
-    public void setUsername(String userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
@@ -42,11 +42,11 @@ public class User {
         this.password = password;
     }
 
-    public String getFullname() {
+    public String getFullName() {
         return fullName;
     }
 
-    public void setFullname(String fullName) {
+    public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
