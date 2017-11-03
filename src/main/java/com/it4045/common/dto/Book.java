@@ -55,11 +55,11 @@ public class Book {
         this.subject = subject;
     }
 
-    public String getDescription() {
+    public String getPublisher() {
         return publisher;
     }
 
-    public void setDescription(String publisher) {
+    public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
 
