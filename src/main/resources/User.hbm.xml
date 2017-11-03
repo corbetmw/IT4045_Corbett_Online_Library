@@ -20,5 +20,12 @@
         <property name="role" type="java.lang.String">
             <column name="role" length="45" not-null="false" unique="false"/>
         </property>
+        <set name="Book" table="Book"
+             inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id" not-null="true" />
+            </key>
+            <one-to-many class="com.it4045.common.dto.Book" />
+        </set>
     </class>
 </hibernate-mapping>
