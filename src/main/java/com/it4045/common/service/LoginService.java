@@ -8,7 +8,9 @@ import com.it4045.common.exceptions.UserNotFoundException;
 import java.io.IOException;
 
 public class LoginService {
+
     public User login(String username, String password) throws InvalidLoginException, IOException {
+
         UserDAO userDAO = new UserDAO();
 
         try {

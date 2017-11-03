@@ -16,11 +16,11 @@
         <property name="author" type="java.lang.String">
             <column name="author" length="1000" not-null="false" unique="false"/>
         </property>
-        <property name="status" type="java.lang.String">
-            <column name="status" length="1000" not-null="false" unique="false"/>
+        <property name="subject" type="java.lang.String">
+            <column name="subject" length="1000" not-null="false" unique="false"/>
         </property>
-        <property name="description" type="java.lang.String">
-            <column name="description" length="1000" not-null="false" unique="false"/>
+        <property name="publisher" type="java.lang.String">
+            <column name="publisher" length="1000" not-null="false" unique="false"/>
         </property>
     </class>
 </hibernate-mapping>

@@ -14,7 +14,7 @@ import java.io.Serializable;
  *A bean class which enables login functionality for
  * the application
  */
-@ManagedBean(name = "loginBean", eager = true)
+@ManagedBean(name = "login", eager = true)
 //@SessionScoped
 public class LoginBean implements Serializable {
     private LoginService loginService = new LoginService();
@@ -55,6 +55,11 @@ public class LoginBean implements Serializable {
         FacesContext currentInstance = FacesContext.getCurrentInstance();
         currentInstance.getExternalContext().getSessionMap().put("user", null);
         return REDIRECT_LOGIN_PAGE;
+    }
+
+    public User getUser() {
+        User user = (User)FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("user");
+        return user;
     }
 
     public String getUserName() {

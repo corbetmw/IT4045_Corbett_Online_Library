@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+    <title>Online Library</title>
+    <meta name="author" content="The Author"></meta>
+</h:head>
+
+<!-- Add 50px padding top to the body for the navbar -->
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+
+    <ui:insert name="commonNavbar">
+        <ui:include src="template/common/commonNavbar.xhtml"/>
+    </ui:insert>
+    <b:container>
+    <br/>
+        <b:row>
+            <b:column col-md="12">
+                <b:form>
+                    <b:inputText fieldSize="lg" placeholder="Search the Catalog">
+                        <f:facet name="append">
+                            <b:commandButton look="primary" iconAwesome="search" icon-align="right" size="lg"/>
+                        </f:facet>
+                    </b:inputText>
+                </b:form>
+                <h:form>
+                    <b:dataTable searching="false"
+                                 paginated="false">
+                        <b:dataTableColumn value="" />
+                        <b:dataTableColumn value="" />
+                        <b:dataTableColumn value="" />
+                        <b:dataTableColumn value="" />
+                        <b:dataTableColumn value="" />
+                        <b:dataTableColumn value="" />
+                    </b:dataTable>
+                </h:form>
+
+            </b:column>
+        </b:row>
+        <hr/>
+        <ui:insert name="footer">
+            <ui:include src="template/common/footer.xhtml"/>
+        </ui:insert>
+    </b:container>
+</h:body>
+</html>

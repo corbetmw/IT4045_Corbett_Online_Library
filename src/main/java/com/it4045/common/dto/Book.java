@@ -6,22 +6,22 @@ package com.it4045.common.dto;
  * data
  */
 public class Book {
-    private Integer id;
-    private String title;
-    private String author;
-    private String status;
-    private String description;
+    Integer id;
+    String title;
+    String author;
+    String subject;
+    String publisher;
 
 
     public Book() {
     }
 
-    public Book(Integer id, String title, String author, String status, String description) {
+    public Book(Integer id, String title, String author, String subject, String publisher) {
         this.id = id;
         this.title = title;
         this.author = author;
-        this.status = status;
-        this.description = description;
+        this.subject = subject;
+        this.publisher = publisher;
     }
 
     public Integer getId() {
@@ -47,20 +47,20 @@ public class Book {
         this.author = author;
     }
 
-    public String getStatus() {
-        return status;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public String getDescription() {
-        return description;
+        return publisher;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String publisher) {
+        this.publisher = publisher;
     }
 
 }

@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:b="http://bootsfaces.net/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
 <h:head>
     <title>Online Library</title>
     <meta name="author" content="The Author"></meta>
@@ -11,38 +12,17 @@
 
 <!-- Add 50px padding top to the body for the navbar -->
 <h:body style="padding-top: 50px; padding-bottom: 20px;">
-    <b:navBar brand="Online Library" brandHref="home.xhtml" inverse="true" fixed="top">
-        <b:navbarLinks>
-            <b:dropMenu value="Dropdown">
-                <b:navLink value="Action" href="#"></b:navLink>
-                <b:navLink value="Another action" href="#"></b:navLink>
-                <b:navLink value="Something else here" href="#"></b:navLink>
-                <b:navLink></b:navLink>
-                <b:navLink header="Nav header"></b:navLink>
-                <b:navLink value="Separated link" href="#"></b:navLink>
-                <b:navLink value="One more separated link" href="#"></b:navLink>
-            </b:dropMenu>
-        </b:navbarLinks>
-        <h:form styleClass="navbar-form navbar-right">
-            <div class="form-group">
-                <b:inputText value="#{loginBean.userName}" requiredMessage="Username required" placeholder="Username" fieldSize="sm"/>
-            </div>
-            <div class="form-group">
-                <b:inputSecret value="#{loginBean.password}" placeholder="Password" fieldSize="sm" requiredMessage="Password required"/>
-            </div>
-            #{' '}
-            <b:commandButton action="#{loginBean.login()}" value="Sign in" look="success" icon="chevron-right" iconAlign="right"/>
-            #{' '}
-            <b:commandButton action="create_account.xhtml" value="Create Account" look="info" icon="user" iconAlign="right"/>
-        </h:form>
-    </b:navBar>
+
+    <ui:insert name="commonNavbar">
+        <ui:include src="template/common/commonNavbar.xhtml"/>
+    </ui:insert>
     <b:jumbotron>
         <b:container>
             <h1>Welcome to the Online Library!</h1>
             <p>This application allows users to browse a catalog of books, check them out, read them, and check them back in!
             </p>
             <p>
-                <a href="https://github.com/TheCoder4eu/BootsFaces-examples/blob/master/src/main/webapp/jumbotron.xhtml" class="btn btn-lg btn-info">Create An Account »</a>
+                <a href="#{navigationController.moveToCreateAccount()}" class="btn btn-lg btn-info">Create An Account »</a>
             </p>
         </b:container>
 
@@ -61,10 +41,9 @@
             </b:column>
         </b:row>
         <hr/>
-        <footer>
-            <p>© Matthew Corbett 2017</p>
-        </footer>
+        <ui:insert name="footer">
+            <ui:include src="template/common/footer.xhtml"/>
+        </ui:insert>
     </b:container>
-
 </h:body>
 </html>

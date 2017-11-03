@@ -5,6 +5,10 @@ import com.it4045.common.dto.User;
 
 import java.io.IOException;
 
+/**
+ * Allows Beans to interact with the
+ * UserDAO
+ */
 public class UserService {
     UserDAO userDAO;
 
