@@ -12,7 +12,6 @@
 
 <!-- Add 50px padding top to the body for the navbar -->
 <h:body style="padding-top: 50px; padding-bottom: 20px;">
-
     <ui:insert name="commonNavbar">
         <ui:include src="template/common/commonNavbar.xhtml"/>
     </ui:insert>
@@ -20,25 +19,48 @@
     <br/>
         <b:row>
             <b:column col-md="12">
-                <b:form>
-                    <b:inputText fieldSize="lg" placeholder="Search the Catalog">
+                <h:form id="catalogForm">
+                    <b:inputText value="#{catalog.searchString}" fieldSize="lg" placeholder="Search the Catalog">
                         <f:facet name="append">
-                            <b:commandButton look="primary" iconAwesome="search" icon-align="right" size="lg"/>
+                            <b:commandButton action="#{catalog.search}"
+                                             look="primary"
+                                             iconAwesome="search"
+                                             icon-align="right"
+                                             size="lg">
+                                <f:ajax execute="catalogForm" render="catalogForm:catalogTable"/>
+                            </b:commandButton>
                         </f:facet>
                     </b:inputText>
-                </b:form>
-                <h:form>
-                    <b:dataTable searching="false"
-                                 paginated="false">
-                        <b:dataTableColumn value="" />
-                        <b:dataTableColumn value="" />
-                        <b:dataTableColumn value="" />
-                        <b:dataTableColumn value="" />
-                        <b:dataTableColumn value="" />
-                        <b:dataTableColumn value="" />
-                    </b:dataTable>
-                </h:form>
 
+                    <h:dataTable id="catalogTable"
+                                 value="#{catalog.catalogBooks}"
+                                 var="book">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Title"/>
+                            </f:facet>
+                            <h:outputText value="#{book.title}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Author"/>
+                            </f:facet>
+                            <h:outputText value="#{book.author}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Subject"/>
+                            </f:facet>
+                            <h:outputText value="#{book.subject}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Publisher"/>
+                            </f:facet>
+                            <h:outputText value="#{book.publisher}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
             </b:column>
         </b:row>
         <hr/>

@@ -22,7 +22,6 @@ public class NetworkService {
     public List<Book> getBooksFromCatalog(String searchString) {
         //Instantiate our book list
         List<Book> catalogBooks = new ArrayList<Book>();
-        Book currentBook = new Book();
         String title;
         String author;
         String subject;
@@ -38,6 +37,7 @@ public class NetworkService {
         JSONArray jsonBooks = jsonObject.getJSONArray("docs");
 
         for (int i = 0; i < jsonBooks.length(); i++) {
+            Book currentBook = new Book();
             //get Book properties from json
             //Catch JSONException because not all results have subject or publishers
             try {

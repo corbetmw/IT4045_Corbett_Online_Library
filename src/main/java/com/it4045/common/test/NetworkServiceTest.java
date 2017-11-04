@@ -1,9 +1,12 @@
 package com.it4045.common.test;
 
+import com.it4045.common.dto.Book;
 import com.it4045.common.service.NetworkService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.List;
 
 public class NetworkServiceTest {
 
@@ -20,6 +23,10 @@ public class NetworkServiceTest {
 
     @Test
     public void testSearchCatalog() throws Exception {
-        networkService.getBooksFromCatalog("The lord of the rings");
+        List<Book> testBookList = networkService.getBooksFromCatalog("the lord of the");
+
+        for(int i=0; i < testBookList.size(); i++){
+            System.out.print(testBookList.get(i).getTitle() + '\n');
+        }
     }
 }
