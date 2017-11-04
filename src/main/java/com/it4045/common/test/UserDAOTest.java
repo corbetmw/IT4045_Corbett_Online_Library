@@ -1,6 +1,7 @@
 package com.it4045.common.test;
 
 import com.it4045.common.dao.UserDAO;
+import com.it4045.common.dto.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -41,13 +42,13 @@ public class UserDAOTest {
     @Test
     public void testAddUser() throws Exception {
 
-//        User user = new User();
-//        user.setFullName("John Doe");
-//        user.setPassword("password");
-//        user.setUserName("jdoe");
-//        user.setRole("");
-//
-//        userDAO.addUser(user);
+        User user = new User();
+        user.setFullName("Jane Doe");
+        user.setPassword("password");
+        user.setUserName("jadoe");
+        user.setRole("");
+
+        userDAO.addUser(user);
     }
 
     @Test

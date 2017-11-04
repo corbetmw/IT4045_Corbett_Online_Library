@@ -20,7 +20,7 @@ public class CatalogBean implements Serializable {
 
     private List<Book> catalogBooks;
     private Book selectedBook;
-    private String searchString = "The Lord of The Rings";
+    private String searchString = "The Giver";
 
     @PostConstruct
     public void init(){

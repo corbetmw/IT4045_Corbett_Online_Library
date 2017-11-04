@@ -22,7 +22,7 @@
                 <b:panel>
                     <b>Publisher:</b><h:outputText value="#{catalog.selectedBook.publisher}"/>
                 </b:panel>
-                <b:commandButton action="#{catalog.checkOutBook(book)}"
+                <b:commandButton action="#{catalog.checkOutBook(catalog.selectedBook)}"
                                  value="Check Out Book"
                                  look="success"
                                  dismiss="modal"

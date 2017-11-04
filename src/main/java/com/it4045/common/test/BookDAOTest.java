@@ -32,10 +32,10 @@ public class BookDAOTest {
     public void testAddBook() throws Exception {
 
         Book book = new Book();
-        book.setTitle("The Lord Of The Rings");
-        book.setAuthor("Tolken");
-        book.setSubject("Fantasy");
-        book.setPublisher("I Do'nt know");
+        book.setTitle("The Giver");
+        book.setAuthor("Lowry");
+        book.setSubject("SciFi");
+        book.setPublisher("Penguin");
 
         bookDAO.addBook(book);
     }
