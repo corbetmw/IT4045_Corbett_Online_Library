@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <h:form id="checkOutForm" horizontal="true">
+        <b:modal id="checkOutModal" styleClass="checkOutModal" title="Check Out" style="text-align:right;">
+
+            <f:facet name="footer">
+                <h4>Are you sure you want to check out the following book?</h4>
+                <br/>
+                <b:panel >
+                    <b>Title:</b><h:outputText value="#{catalog.selectedBook.title}"/>
+                </b:panel>
+                <b:panel>
+                    <b>Author:</b><h:outputText value="#{catalog.selectedBook.author}"/>
+                </b:panel>
+                <b:panel>
+                    <b>Subject:</b><h:outputText value="#{catalog.selectedBook.subject}"/>
+                </b:panel>
+                <b:panel>
+                    <b>Publisher:</b><h:outputText value="#{catalog.selectedBook.publisher}"/>
+                </b:panel>
+                <b:commandButton action="#{catalog.checkOutBook(book)}"
+                                 value="Check Out Book"
+                                 look="success"
+                                 dismiss="modal"
+                                 iconAwesome="book"/>
+                <b:button value="Cancel" look="danger" dismiss="modal" />
+            </f:facet>
+        </b:modal>
+    </h:form>
+</ui:composition>

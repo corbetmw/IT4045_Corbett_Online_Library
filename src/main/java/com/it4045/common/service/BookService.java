@@ -13,17 +13,26 @@ public class BookService {
 
     BookDAO bookDAO;
 
-    public BookService() throws IOException {
-        this.bookDAO = new BookDAO();
+    public BookService() {
+        try {
+            this.bookDAO = new BookDAO();
+        } catch (IOException e) {
+            System.out.print("Unable to create new book DAO");
+        }
     }
 
     /**
      * Implements the BookDAO addBook method
+     *
      * @param book
      * @throws Exception
      */
-    public void createBook(Book book) throws Exception {
-        this.bookDAO.addBook(book);
+    public void createBook(Book book) {
+        try {
+            this.bookDAO.addBook(book);
+        } catch (Exception e) {
+            System.out.print("Unable to create new book DAO");
+        }
     }
 
 }

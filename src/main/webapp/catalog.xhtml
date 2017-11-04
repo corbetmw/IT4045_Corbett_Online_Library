@@ -19,6 +19,7 @@
     <br/>
         <b:row>
             <b:column col-md="12">
+                <h3>Do not attempt to use the search box, it's still under development</h3>
                 <h:form id="catalogForm">
                     <b:inputText value="#{catalog.searchString}" fieldSize="lg" placeholder="Search the Catalog">
                         <f:facet name="append">
@@ -32,9 +33,22 @@
                         </f:facet>
                     </b:inputText>
 
-                    <h:dataTable id="catalogTable"
+                    <b:dataTable id="catalogTable"
                                  value="#{catalog.catalogBooks}"
                                  var="book">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Check Out"/>
+                            </f:facet>
+                            <b:commandButton ajax="true"
+                                             update="@(.checkOutModal)"
+                                             onclick="ajax:catalog.setSelectedBook(book);"
+                                             oncomplete="$('.checkOutModal').modal();"
+                                             value="Check Out"
+                                             iconAwesome="book"
+                                             look="success">
+                            </b:commandButton>
+                        </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="Title"/>
@@ -59,7 +73,7 @@
                             </f:facet>
                             <h:outputText value="#{book.publisher}"/>
                         </h:column>
-                    </h:dataTable>
+                    </b:dataTable>
                 </h:form>
             </b:column>
         </b:row>
@@ -69,4 +83,8 @@
         </ui:insert>
     </b:container>
 </h:body>
+<!--Modal-->
+<ui:insert name="checkOutModal">
+    <ui:include src="template/common/checkOutModal.xhtml"/>
+</ui:insert>
 </html>
